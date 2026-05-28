@@ -384,6 +384,7 @@ ul, ol { list-style: none; }
 
 .about__field-wrap {
   margin-top: 40px;
+  text-align: center;
 }
 
 .about__field-photo {
@@ -393,6 +394,7 @@ ul, ol { list-style: none; }
   height: 260px;
   object-fit: cover;
   object-position: center;
+  margin: 0 auto;
 }
 
 .photo-caption {
@@ -540,6 +542,33 @@ ul, ol { list-style: none; }
   font-size: 13px;
   color: #777;
   line-height: 1.4;
+}
+
+/* =====================================================
+   FRANCHISE CALLOUT (within About)
+===================================================== */
+.franchise-callout {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: var(--forest-deep);
+  border-radius: 8px;
+  border-left: 4px solid var(--field-gold);
+}
+
+.franchise-callout h4 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--field-gold);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.franchise-callout p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.82);
 }
 
 /* =====================================================
@@ -761,6 +790,231 @@ ul, ol { list-style: none; }
 }
 
 /* =====================================================
+   CAMPAIGN CARD IMAGES
+===================================================== */
+.work-card__img-wrap {
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background: #111;
+}
+
+.work-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.work-card:hover .work-card__img {
+  transform: scale(1.03);
+}
+
+/* =====================================================
+   CAMPAIGN CARD HEADERS
+===================================================== */
+.work-card__campaign-header {
+  padding: 32px 32px 28px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card__campaign-header--green {
+  background: var(--forest-deep);
+}
+
+.work-card__campaign-header--dark {
+  background: #111A14;
+}
+
+/* Subtle decorative oval in the corner */
+.work-card__campaign-header::after {
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  pointer-events: none;
+}
+
+.campaign-header__inner { position: relative; z-index: 1; }
+
+.campaign-header__eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-bottom: 12px;
+}
+
+.campaign-header__title,
+h3.campaign-header__title {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(26px, 2.8vw, 34px);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.work-card__campaign-header--green .campaign-header__title {
+  color: var(--white);
+}
+
+.work-card__campaign-header--dark .campaign-header__title {
+  color: var(--field-gold);
+}
+
+.campaign-header__type {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.65);
+}
+
+/* Channel scope tags */
+.work-card__channels {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(168,197,181,0.25);
+}
+
+.channels-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lake-slate);
+  margin-bottom: 10px;
+}
+
+.channel-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.channel-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(91,127,166,0.08);
+  border: 1px solid rgba(91,127,166,0.22);
+  border-radius: 12px;
+  font-size: 11px;
+  color: var(--lake-slate);
+  white-space: nowrap;
+}
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+.testimonials {
+  padding: var(--section-v) var(--pad-x);
+  background: var(--white);
+}
+
+.testimonials__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.testimonials h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(28px, 3.2vw, 38px);
+  font-weight: 400;
+  color: var(--forest-deep);
+  margin-bottom: 48px;
+}
+
+.testimonials__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.testimonial-card {
+  background: var(--linen-warm);
+  border-radius: 8px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.testimonial-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(44,74,62,0.1);
+}
+
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 18px;
+  left: 28px;
+  font-family: var(--font-serif);
+  font-size: 80px;
+  color: var(--sage-mist);
+  line-height: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.testimonial-quote {
+  padding-top: 28px;
+  margin-bottom: 28px;
+  flex: 1;
+}
+
+.testimonial-quote p {
+  font-size: 15px;
+  line-height: 1.78;
+  color: var(--body-text);
+  font-style: italic;
+}
+
+.testimonial-cite {
+  border-top: 1px solid rgba(168,197,181,0.5);
+  padding-top: 20px;
+}
+
+.testimonial-name {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--forest-deep);
+  margin-bottom: 3px;
+}
+
+.testimonial-role {
+  display: block;
+  font-size: 13px;
+  color: var(--lake-slate);
+  margin-bottom: 4px;
+}
+
+.testimonial-context {
+  display: block;
+  font-size: 12px;
+  color: #aaa;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+/* =====================================================
    RESPONSIVE — TABLET  768–1099px
 ===================================================== */
 @media (min-width: 768px) and (max-width: 1099px) {
@@ -782,6 +1036,11 @@ ul, ol { list-style: none; }
   .skills__groups {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 
@@ -850,6 +1109,10 @@ ul, ol { list-style: none; }
     grid-template-columns: 1fr;
     gap: 36px;
   }
+
+  /* Testimonials */
+  .testimonials__grid { grid-template-columns: 1fr; }
+  .testimonial-card { padding: 32px 28px; }
 
   /* Contact */
   .contact__ctas {
