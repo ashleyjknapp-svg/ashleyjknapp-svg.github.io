@@ -156,24 +156,14 @@ ul, ol { list-style: none; }
   padding: 0 var(--pad-x);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 64px;
 }
-
-.nav__name {
-  font-family: var(--font-serif);
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--white);
-  letter-spacing: 0.01em;
-  transition: color 0.2s;
-}
-.nav__name:hover { color: var(--sage-mist); }
 
 .nav__links {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 22px;
   list-style: none;
 }
 .nav__links a {
@@ -1464,12 +1454,16 @@ h3.campaign-header__title {
 
   .nav__links {
     display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
     flex-direction: column;
     gap: 0;
-    width: 100%;
     background: var(--forest-deep);
     border-top: 1px solid rgba(255,255,255,0.1);
     padding-bottom: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
   }
   .nav__links.open { display: flex; }
   .nav__links li { width: 100%; }
