@@ -100,3 +100,27 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: '-40% 0px -50% 0px' });
 
 sections.forEach(s => sectionObserver.observe(s));
+
+/* =====================================================
+   HERO PARALLAX — decorative rings follow mouse
+===================================================== */
+const hero = document.getElementById('hero');
+const heroDecos = document.querySelectorAll('.hero__deco');
+
+if (hero && heroDecos.length) {
+  hero.addEventListener('mousemove', (e) => {
+    const rect = hero.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    heroDecos.forEach((deco, i) => {
+      const depth = (i + 1) * 0.35;
+      deco.style.transform = `translate(${x * 22 * depth}px, ${y * 14 * depth}px)`;
+    });
+  }, { passive: true });
+
+  hero.addEventListener('mouseleave', () => {
+    heroDecos.forEach(deco => {
+      deco.style.transform = 'translate(0, 0)';
+    });
+  });
+}
