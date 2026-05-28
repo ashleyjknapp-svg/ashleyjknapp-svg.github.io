@@ -1150,6 +1150,37 @@ h3.campaign-header__title {
   border-radius: 4px;
 }
 
+/* 2-up photo grid inside a story block */
+.story-block__photo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.story-block__photo-grid-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.story-block__photo-grid-img:hover {
+  transform: scale(1.03);
+}
+
+.story-block__photo-caption {
+  font-size: 11px;
+  color: rgba(255,255,255,0.38);
+  font-style: italic;
+  margin-top: 10px;
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
 .story-block__eyebrow {
   display: block;
   font-size: 10px;
@@ -1518,6 +1549,7 @@ h3.campaign-header__title {
   .story-block--flip .story-block__content { order: 1; }
   .story-block--flip .story-block__media { order: 2; }
   .story-block__img { height: 260px; }
+  .story-block__photo-grid-img { height: 180px; }
   .story-block__media--qlr { padding: 24px 20px; }
   .qlr-city { font-size: 17px; }
   .story-block__qlr-stats { gap: 8px; }
