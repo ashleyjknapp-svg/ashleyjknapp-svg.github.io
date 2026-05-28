@@ -333,8 +333,8 @@ ul, ol { list-style: none; }
 .hero__photo { flex-shrink: 0; }
 
 .photo-ring {
-  width: clamp(220px, 22vw, 284px);
-  height: clamp(220px, 22vw, 284px);
+  width: clamp(275px, 27.5vw, 355px);
+  height: clamp(275px, 27.5vw, 355px);
   border-radius: 50%;
   border: 3px solid var(--sage-mist);
   padding: 6px;
@@ -421,7 +421,8 @@ ul, ol { list-style: none; }
 .about__copy p:last-child { margin-bottom: 0; }
 
 .about__field-wrap {
-  margin-top: 40px;
+  margin-top: 28px;
+  margin-bottom: 32px;
   text-align: center;
 }
 
@@ -1489,8 +1490,8 @@ h3.campaign-header__title {
   .hero__tagline { max-width: 100%; }
   .hero__ctas { justify-content: center; }
   .photo-ring {
-    width: 196px;
-    height: 196px;
+    width: 245px;
+    height: 245px;
   }
 
   /* Stats */
