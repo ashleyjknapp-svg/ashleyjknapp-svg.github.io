@@ -374,7 +374,7 @@ ul, ol { list-style: none; }
   max-width: var(--max-w);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 24px;
   text-align: center;
 }
@@ -1081,6 +1081,220 @@ h3.campaign-header__title {
 }
 
 /* =====================================================
+   PROCESS CARD — WIDE (5th card spans both columns)
+===================================================== */
+.process-card--wide {
+  grid-column: 1 / -1;
+}
+
+.process-card__body-wide {
+  display: flex;
+  gap: 32px;
+  flex: 1;
+}
+
+.process-card--wide .process-card__problem,
+.process-card--wide .process-card__solution {
+  flex: 1;
+}
+
+/* =====================================================
+   STORIES FROM THE FIELD
+===================================================== */
+.stories-section {
+  padding: var(--section-v) var(--pad-x);
+  background: var(--forest-deep);
+  color: #fff;
+}
+
+.stories__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.stories-section .section-label { color: var(--field-gold); }
+.stories-section h2 { color: #fff; }
+
+.stories__intro {
+  max-width: 680px;
+  font-size: clamp(15px, 1.6vw, 17px);
+  line-height: 1.75;
+  color: rgba(255,255,255,0.72);
+  margin-top: 16px;
+  margin-bottom: 60px;
+}
+
+.story-blocks {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.story-block,
+.story-block--flip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 52px;
+  align-items: start;
+}
+
+.story-block--flip .story-block__content { order: 1; }
+.story-block--flip .story-block__media   { order: 2; }
+
+.story-block__img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 4px;
+}
+
+.story-block__eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--field-gold);
+  margin-bottom: 14px;
+}
+
+.story-block h3 {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 2.4vw, 28px);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 18px;
+  line-height: 1.25;
+}
+
+.story-block p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.78);
+  margin-bottom: 14px;
+}
+
+.story-block__detail {
+  font-size: 12px;
+  font-style: italic;
+  color: rgba(255,255,255,0.4);
+  margin-top: 6px;
+}
+
+/* QLR stat chips */
+.story-block__qlr-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 24px;
+}
+
+.qlr-chip {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(201,168,124,0.28);
+  border-radius: 6px;
+  padding: 10px 16px;
+  text-align: center;
+  min-width: 76px;
+}
+
+.qlr-chip__num {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--field-gold);
+  line-height: 1;
+}
+
+.qlr-chip__label {
+  display: block;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+}
+
+/* Field testimonials */
+.story-block__testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.field-quote {
+  border-left: 3px solid rgba(201,168,124,0.35);
+  padding-left: 16px;
+  margin: 0;
+}
+
+.field-quote p {
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(255,255,255,0.68);
+  margin-bottom: 4px;
+}
+
+.field-quote cite {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+}
+
+/* QLR city list visual */
+.story-block__media--qlr {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(168,197,181,0.12);
+  border-radius: 4px;
+  padding: 40px 36px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 320px;
+  box-sizing: border-box;
+}
+
+.qlr-cities {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.qlr-city {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.82);
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(168,197,181,0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.qlr-city:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.qlr-city span {
+  font-family: var(--font-sans, var(--font-sans));
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--field-gold);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* =====================================================
    TESTIMONIALS
 ===================================================== */
 .testimonials {
@@ -1103,14 +1317,14 @@ h3.campaign-header__title {
 
 .testimonials__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .testimonial-card {
   background: var(--linen-warm);
   border-radius: 8px;
-  padding: 40px;
+  padding: 32px 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1191,8 +1405,8 @@ h3.campaign-header__title {
   }
 
   .stats__inner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 20px;
   }
 
   .skills__groups {
@@ -1201,9 +1415,13 @@ h3.campaign-header__title {
   }
 
   .testimonials__grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
+
+  /* Stories */
+  .story-block,
+  .story-block--flip { gap: 36px; }
 }
 
 /* =====================================================
@@ -1291,4 +1509,16 @@ h3.campaign-header__title {
   /* Process / AI & Ops */
   .process__cards { grid-template-columns: 1fr; }
   .process-card { padding: 28px 24px; }
+  .process-card--wide { grid-column: 1; }
+  .process-card__body-wide { flex-direction: column; gap: 16px; }
+
+  /* Stories from the Field */
+  .story-block,
+  .story-block--flip { grid-template-columns: 1fr; }
+  .story-block--flip .story-block__content { order: 1; }
+  .story-block--flip .story-block__media { order: 2; }
+  .story-block__img { height: 260px; }
+  .story-block__media--qlr { padding: 24px 20px; }
+  .qlr-city { font-size: 17px; }
+  .story-block__qlr-stats { gap: 8px; }
 }

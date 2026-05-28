@@ -74,7 +74,7 @@ let statsAnimated = false;
 const statsObserver = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting && !statsAnimated) {
     statsAnimated = true;
-    document.querySelectorAll('.stat__number').forEach(animateCount);
+    document.querySelectorAll('.stat__number[data-target]').forEach(animateCount);
     statsObserver.disconnect();
   }
 }, { threshold: 0.5 });
